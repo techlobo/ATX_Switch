@@ -1,0 +1,22 @@
+kvm_switch_mapping:
+  - channel: 1
+    atx_switch_port:
+      switch_address: 0x20
+      port_number: 1
+
+  - channel: 2
+    atx_switch_port:
+      switch_address: 0x20
+      port_number: 2
+
+  - channel: 3
+    atx_switch_port:
+      switch_address: 0x20
+      port_number: 3
+
+  - channel: 4
+    atx_switch_port:
+      switch_address: 0x20
+      port_number: 4
+  
+  # Add more mappings as needed

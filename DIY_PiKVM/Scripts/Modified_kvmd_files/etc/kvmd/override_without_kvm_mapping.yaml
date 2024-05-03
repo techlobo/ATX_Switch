@@ -1,0 +1,116 @@
+kvmd:
+    gpio:
+        drivers:
+            port1:
+                type: cmd
+                cmd: [/etc/atx_switch/select1.py]
+            port2:
+                type: cmd
+                cmd: [/etc/atx_switch/select2.py]
+            port3:
+                type: cmd
+                cmd: [/etc/atx_switch/select3.py]
+            port4:
+                type: cmd
+                cmd: [/etc/atx_switch/select4.py]
+            p1_led:
+                type: cmdret
+                cmd: [/etc/atx_switch/port_test_1.py]
+            p2_led:
+                type: cmdret
+                cmd: [/etc/atx_switch/port_test_2.py]
+            p3_led:
+                type: cmdret
+                cmd: [/etc/atx_switch/port_test_3.py]
+            p4_led:
+                type: cmdret
+                cmd: [/etc/atx_switch/port_test_4.py]
+            hk:
+                type: xh_hk4401
+                device: /dev/ttyUSB0
+        scheme:
+            port1:
+                driver: port1
+                pin: 0
+                mode: output
+                switch: false
+            port2:
+                driver: port2
+                pin: 1
+                mode: output
+                switch: false
+            port3:
+                driver: port3
+                pin: 2
+                mode: output
+                switch: false
+            port4:
+                driver: port4
+                pin: 3
+                mode: output
+                switch: false
+            prt1_led:
+                driver: p1_led
+                pin: 0
+                mode: input
+            prt2_led:
+                driver: p2_led
+                pin: 1
+                mode: input
+            prt3_led:
+                driver: p3_led
+                pin: 2
+                mode: input
+            prt4_led:
+                driver: p4_led
+                pin: 3
+                mode: input
+            ch0_led:
+                driver: hk
+                pin: 0
+                mode: input
+            ch1_led:
+                driver: hk
+                pin: 1
+                mode: input
+            ch2_led:
+                driver: hk
+                pin: 2
+                mode: input
+            ch3_led:
+                driver: hk
+                pin: 3
+                mode: input
+            ch0_button:
+                driver: hk
+                pin: 0
+                mode: output
+                switch: false
+            ch1_button:
+                driver: hk
+                pin: 1
+                mode: output
+                switch: false
+            ch2_button:
+                driver: hk
+                pin: 2
+                mode: output
+                switch: false
+            ch3_button:
+                driver: hk
+                pin: 3
+                mode: output
+                switch: false
+        view:
+            header:
+                title: Source
+            table:
+                - []
+                - ["#Input 1", ch0_led, "ch0_button|Select", "port1|ATX1", prt1_led]
+                - []
+                - ["#Input 2", ch1_led, "ch1_button|Select", "port2|ATX2", prt2_led]
+                - []
+                - ["#Input 3", ch2_led, "ch2_button|Select", "port3|ATX3", prt3_led]
+                - []
+                - ["#Input 4", ch3_led, "ch3_button|Select", "port4|ATX4", prt4_led]
+                - []

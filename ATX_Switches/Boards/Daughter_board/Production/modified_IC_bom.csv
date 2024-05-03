@@ -1,0 +1,9 @@
+Designator,Footprint,Quantity,Value,Do Not Populate,LCSC Part #,Potential Source
+"C1, C2, C3",603,3,100nF,,C14663,
+"H2, H3, H5, H6",MountingHole_2.7mm_M2.5_DIN965_Pad_TopBottom,4,MountingHole_Pad,,,
+J1,PinSocket_2x06_P2.54mm_Vertical,1,Conn_02x06_Odd_Even,DNP,C2935986,
+J2,AMPHENOL_RJHSE-5381-04,1,RJHSE-5381-04,DNP,,https://www.aliexpress.com/item/32730855182.html?spm=a2g0o.order_list.order_list_main.315.f030180241DGLo
+"R10, R2, R3, R4, R5, R6, R7, R8, R9",603,8,4.7k,,C23162,
+"R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22, R23, R24, R25, R26, R27",603,17,390,,C23151,
+"U1, U2, U3",DIP-16_W7.62mm_Socket_LongPads,3,CD4052B,DNP,C507162,
+"U10, U11, U12, U13, U14, U15, U16, U17, U18, U19, U4, U5, U6, U7, U8, U9",DIP-4_W7.62mm_Socket_LongPads,16,LTV-817,DNP,C109225,

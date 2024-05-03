@@ -1,0 +1,263 @@
+#!/usr/bin/env python
+# ========================================================================== #
+#                                                                            #
+#   ATX Switch                                                               #
+#                                                                            #
+#    initialise_atx_switches - script to verify presence, and configure      #
+#                              operation of ATX switch units available       #
+#                              via I2C from DIY PiKVM control unit           #
+#                                                                            #
+#    Copyright (C) 2023-2024   techlobo <techlobo@gmail.com>                 #
+#                                                                            #
+#    This program is free software: you can redistribute it and/or modify    #
+#    it under the terms of the GNU General Public License as published by    #
+#    the Free Software Foundation, either version 3 of the License, or       #
+#    (at your option) any later version.                                     #
+#                                                                            #
+#    This program is distributed in the hope that it will be useful,         #
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of          #
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the           #
+#    GNU General Public License for more details.                            #
+#                                                                            #
+#    You should have received a copy of the GNU General Public License       #
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.  # #                                                                            #
+# ========================================================================== #
+
+
+import os
+import sys
+import time
+import yaml
+import smbus2
+import logging
+import systemd.journal
+
+# Set up logging
+logger = logging.getLogger('ATX_Logger')
+journal_handler = systemd.journal.JournalHandler(SYSLOG_IDENTIFIER='ATX')
+formatter = logging.Formatter('%(asctime)s [%(levelname)s] - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+journal_handler.setFormatter(formatter)
+
+logger.addHandler(journal_handler)
+
+def setup_logging(debug_flag):
+    logger.setLevel(logging.DEBUG if debug_flag else logging.INFO)
+
+# Define valid parameter values
+VALID_I2C_ADDRESSES = [0x20, 0x21, 0x22, 0x23, 0x24, 0x25, 0x26, 0x27]
+VALID_NUM_PORTS = [4, 8]
+VALID_ATX_OPS = ['i2c', 'gpio']
+VALID_DB_TEST = ['yes', 'no']
+VALID_PORT_SELECT_TEST = ['yes', 'no']
+VALID_DEBUG_FLAG_TEST = [True, False]
+
+# define variables
+sw_addresses = []
+
+# Dictionary attribute offsets
+num_dict_offset_attributes = 5
+i2c_address_dict_offset = 10
+num_ports_dict_offset = 10
+atx_ops_dict_offset = 10
+db_test_dict_offset = 10
+port_select_test_dict_offset = 10
+
+def daughterboard_test(i2c_bus, i2c_address):
+    # Set IODIR register to 0x30 (binary 00110000)
+    i2c_bus.write_byte_data(i2c_address, 0x00, 0x30)
+    
+    # Perform Daughter Board test
+    check_value = 0
+    db_test_message = "Daughter board is ABSENT"
+    for port_number in [0x08, 0x09, 0x0A, 0x0B]:
+        i2c_bus.write_byte_data(i2c_address, 0x09, port_number)
+        time.sleep(1)
+        gpio_register_value = i2c_bus.read_byte_data(i2c_address, 0x09)
+        check_value = (check_value << 1) + gpio_register_value - port_number
+        if check_value == 0x40:
+            db_test_message = "Daughter board is PRESENT"
+            break
+
+    logger.info(f"ATX_Switch_{switch_num} - {db_test_message}")
+
+# Check if the YAML file exists
+config_file_path = "/etc/atx_switch/atx_switch_initialisation.yaml"
+if not os.path.exists(config_file_path):
+    logger.error("The YAML configuration file is not present.")
+
+    sys.exit(1)
+
+# Load the YAML configuration
+with open(config_file_path, 'r') as config_file:
+    config = yaml.safe_load(config_file)
+
+# Validate debug_flag
+debug_flag = config.get('debug_flag')
+if debug_flag not in VALID_DEBUG_FLAG_TEST:
+    logger.error(f"Invalid 'debug_flag' value: {debug_flag}")
+    sys.exit(1)
+
+setup_logging(debug_flag)
+
+# Validate num_switches
+num_switches = config.get('num_switches')
+if not (1 <= num_switches <= 8):
+    logger.error(f"Invalid 'num_switches' value: {num_switches}")
+    sys.exit(1)
+
+# Check if the number of my_switch_X entries equals num_switches
+switch_entries = [f'my_switch_{i}' for i in range(1, num_switches + 1)]
+if not all(entry in config for entry in switch_entries):
+    logger.error(f"Number of 'my_switch_X' entries does not match 'num_switches': {num_switches}")
+    sys.exit(1)
+
+# Initialize the I2C bus (bus number 1)
+i2c_bus = smbus2.SMBus(1)
+devices_found = 0
+
+# Check each switch entry
+for switch_num in range(1, num_switches + 1):
+    switch_entry = config[f'my_switch_{switch_num}']
+
+# check that all fields are present
+    for i in range(0, len(switch_entry)):
+        if "i2c_address" in switch_entry[i]:
+            i2c_address_dict_offset = i
+        if "num_ports" in switch_entry[i]:
+            num_ports_dict_offset = i
+        if "atx_ops" in switch_entry[i]:
+            atx_ops_dict_offset = i
+        if "db_test" in switch_entry[i]:
+            db_test_dict_offset = i
+        if "port_select_test" in switch_entry[i]:
+            port_select_test_dict_offset = i
+
+    if 10 in (i2c_address_dict_offset, num_ports_dict_offset, atx_ops_dict_offset, db_test_dict_offset, port_select_test_dict_offset):
+        if i2c_address_dict_offset == 10:
+            logger.error(f"Missing 'i2c_address' attribute in 'My_switch_{switch_num}")
+        if num_ports_dict_offset == 10:
+            logger.error(f"Missing 'num_ports' attribute in 'My_switch_{switch_num}")
+        if atx_ops_dict_offset == 10:
+            logger.error(f"Missing 'atx_ops' attribute in 'My_switch_{switch_num}")
+        if db_test_dict_offset == 10:
+            logger.error(f"Missing 'db_test' attribute in 'My_switch_{switch_num}")
+        if port_select_test_dict_offset == 10:
+            logger.error(f"Missing 'port_select_test' attribute in 'My_switch_{switch_num}")
+
+    logger.debug(f"Switch is {switch_entry}")
+
+    try:
+        i2c_address = switch_entry[0].get('i2c_address')
+    except IndexError as e:
+        logger.error(f" {e} - missing parameter 'i2c_address'")
+
+    if i2c_address not in VALID_I2C_ADDRESSES:
+        logger.error(f"'my_switch_{switch_num}' - Invalid 'i2c_address' value : 0x{hex(i2c_address)[2:]}")
+        sys.exit(1)
+
+    logger.debug(f"switchnum is {switch_num}")
+    logger.debug(f"i2caddress is 0x{hex(i2c_address)[2:]}")
+
+    try:
+        num_ports = switch_entry[1].get('num_ports')
+    except IndexError as e:
+        logger.error(f" {e} - missing parameter 'num_ports'")
+
+    if num_ports not in VALID_NUM_PORTS:
+        logger.error(f"'my_switch_{switch_num}' - Invalid 'num_ports' value : {num_ports}")
+        sys.exit(1)
+
+    logger.debug(f"numports are {num_ports}")
+
+    try:
+        atx_ops = switch_entry[2].get('atx_ops')
+    except IndexError as e:
+        logger.error(f" {e} - missing parameter 'atx_ops'")
+
+    if atx_ops not in VALID_ATX_OPS:
+        logger.error(f"'my_switch_{switch_num}' - Invalid 'atx_ops' value : {atx_ops}")
+        sys.exit(1)
+
+    logger.debug(f"atxops are {atx_ops}")
+
+    try:
+        db_test = switch_entry[3].get('db_test')
+    except IndexError as e:
+        logger.error(f" {e} - missing parameter 'db_test'")
+
+    if db_test not in VALID_DB_TEST:
+        logger.error(f"'my_switch_{switch_num}' - Invalid 'db_test' value : {db_test}")
+        sys.exit(1)
+
+    logger.debug(f"dbtest is {db_test}")
+
+    try:
+        port_select_test = switch_entry[4].get('port_select_test')
+    except IndexError as e:
+        logger.error(f" {e} - missing parameter 'port_select'")
+
+    if port_select_test not in VALID_PORT_SELECT_TEST:
+        logger.error(f"'my_switch_{switch_num}' - Invalid 'port_select_test' value : {port_select_test}")
+        sys.exit(1)
+
+    logger.debug(f"port_select_test is {port_select_test}")
+
+    try:
+        # Verify the device on the I2C bus
+        i2c_bus.read_byte(i2c_address)
+        devices_found += 1
+        logger.info(f"'my_switch_{switch_num}' at I2C address 0x{hex(i2c_address)[2:]} - Device is present.")
+        sw_addresses .append(i2c_address)
+        
+        # Set IODIR register and perform other operations if the device is present
+        i2c_bus.write_byte_data(i2c_address, 0x00, 0x30)
+        i2c_bus.write_byte_data(i2c_address, 0x09, 0x00)
+        
+        if db_test == 'yes':
+            daughterboard_test(i2c_bus, i2c_address)
+        
+        if port_select_test == 'yes':
+            for port_number in range(1, num_ports + 1):
+                i2c_bus.write_byte_data(i2c_address, 0x09, 0x03 + port_number)
+                time.sleep(1)
+            i2c_bus.write_byte_data(i2c_address, 0x09, 0x00)
+
+# handle remote IO error 121 which normally means that an addressed slave device is not
+# present at the address provided
+    except IOError as e:
+        if e.errno == 121:
+            logger.error(f"'my_switch_{switch_num}' at I2C address 0x{hex(i2c_address)[2:]} - Device is NOT present.")
+        else:
+            logger.error(f"An error occurred while accessing 'my_switch_{switch_num}': {str(e)}")
+
+# Display the result
+if devices_found == 0:
+    logger.error("No ATX Switches are present.")
+
+# create the operational YAML file
+operational_data = {
+    "sw_addresses": sw_addresses,
+    "current_sw_address": 0,
+    "current_port_num": 0,
+    "debug_flag": debug_flag
+}
+
+def hexint_presenter(dumper, operational_data):
+    return dumper.represent_int(hex(operational_data))
+yaml.add_representer(int, hexint_presenter)
+
+directory_path = '/var/tmp/atx_switch'
+filename = os.path.join(directory_path, 'atx_operational.yaml')
+os.makedirs(directory_path, exist_ok=True)
+with open(filename, "w") as yaml_file:
+    yaml.dump(operational_data, yaml_file, default_flow_style=False)
+# Note - If use safe_dump then data is presented in decimal not hex format!!
+os.chmod(directory_path, 0o777)
+os.chmod(filename, 0o666)
+
+kvm_mapping_filename = "/etc/atx_switch/atx_kvm_mapping.yaml"
+atx_kvm_first_time_filename = "/var/tmp/atx_switch/atx_kvm_first_time"
+
+if os.path.exists(kvm_mapping_filename):
+    with open(atx_kvm_first_time_filename, 'w') as atx_kvm_first_time_file:
+        os.chmod(atx_kvm_first_time_filename, 0o666)

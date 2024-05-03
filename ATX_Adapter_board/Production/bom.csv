@@ -1,0 +1,5 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #,
+"H1, H2",MountingHole_3.2mm_M3_Pad,2,MountingHole_Pad,,
+J1,RJHSE5381,1,RJHSE-5381,,https://www.aliexpress.com/item/32728838902.html?spm=a2g0o.order_list.order_list_main.308.71011802gTyL6x
+"J10, J4, J6, J8",PinSocket_1x02_P2.54mm_Vertical,4,Conn_01x02,,
+"J3, J5, J7, J9",PinHeader_1x02_P2.54mm_Vertical,4,Conn_01x02,,

@@ -1,0 +1,9 @@
+﻿Designator,Footprint,Quantity,Value,LCSC Part #,Potential source
+J1,RHDR40W64P254_2X20_5130X500X1625P,1,PRT-16763,,https://www.aliexpress.com/item/1005005366790021.html?spm=a2g0o.order_list.order_list_main.33.71011802gTyL6x
+J2,HDRRA4W64P0X254_1X4_1001X318X635P,1,171857-0004,,https://www.aliexpress.com/item/1005002905132620.html?spm=a2g0o.order_list.order_list_main.68.71011802gTyL6x
+J3,RJHSE5381,1,RJHSE-5381,,https://www.aliexpress.com/item/32728838902.html?spm=a2g0o.order_list.order_list_main.308.71011802gTyL6x
+J4,PinHeader_1x05_P2.54mm_Vertical,1,Conn_01x05_Pin,,
+"J5, J6",PinHeader_1x04_P2.54mm_Horizontal,2,Conn_01x04_Pin,,
+J7,PinHeader_1x02_P2.54mm_Vertical,1,Conn_01x02_Pin,,
+J9,JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal,1,Conn_01x04_MountingPin,,https://www.aliexpress.com/item/4001225684969.html?spm=a2g0o.order_list.order_list_main.11.71011802gTyL6x
+R1,805,1,4.7K,,

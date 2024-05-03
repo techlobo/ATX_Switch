@@ -1,0 +1,1 @@
+This sub-folder contains the details on the ATX Switch [main board](./Main_board/README.md) (4-port operation), and [daughter board](./Daughter_board/README.md) (additional 4-port operation) components.

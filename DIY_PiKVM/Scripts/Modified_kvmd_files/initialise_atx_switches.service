@@ -1,0 +1,12 @@
+[Unit]
+Description=Initialise_ATX_switches - configuration utility for ATX switches
+After=network-online.target ntp.service
+ConditionPathExists=/dev/i2c-1
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/initialise_atx_switches
+TimeoutStopSec=3
+
+[Install]
+WantedBy=multi-user.target

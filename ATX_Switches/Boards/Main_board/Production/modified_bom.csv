@@ -1,0 +1,21 @@
+Designator,Footprint,Quantity,Value,LCSC Part #,Do Not Place,,Potential Source,Notes
+"C1, C11",603,2,1uF,C15849,,,,
+"C10, C2, C4, C5, C6, C7, C8, C9",603,8,100nF,C14663,,,,
+"H1, H2, H3, H4, H5, H6, H7, H8",MountingHole_2.7mm_M2.5_DIN965_Pad_TopBottom,8,MountingHole_Pad,,,,,
+"J1, J2",RJHSE5381,2,RJHSE-5381,,DNP,,https://www.aliexpress.com/item/32728838902.html,
+J10,PinHeader_2x03_P2.54mm_Vertical,1,Conn_02x03_Odd_Even,C5116479,DNP,,,Optional - not required if piano switch used
+"J11, J5, J7, J8, J9",PinHeader_1x03_P2.54mm_Vertical,5,Conn_01x03,C429954,DNP,,,
+J3,PinSocket_2x06_P2.54mm_Vertical,1,Conn_02x06_Odd_Even,C2935986,DNP,,https://www.aliexpress.com/item/32851433725.html,Need 6-pin double row sockets (12-pin total)
+J4,BarrelJack_Horizontal_163-179PH-EX,1,163-179PH-EX,C194407,DNP,,https://www.aliexpress.com/item/4001206395694.html,
+J6,AMPHENOL_RJHSE-5381-04,1,RJHSE-5381-04,,DNP,,https://www.aliexpress.com/item/32730855182.html,
+"R1, R15, R16, R17, R18, R19, R2, R20, R21, R22, R3, R31, R32, R33, R34, R39, R4, R40, R5, R6, R7, R8, R9",603,23,390,C23151,,,,
+"R10, R11, R12, R23, R24, R25, R26, R27, R28, R29, R30, R35, R36, R41, R42",603,15,4.7k,C23162,,,,
+"R13, R14, R37, R38",603,4,10K,C25804,,,,
+S2,NDP03TV,1,NDP-03T-V,C126880,DNP,,https://www.aliexpress.com/item/32963042282.html,Need 3-pole piano switch
+"U1, U2, U3",DIP-16_W7.62mm_Socket_LongPads,3,CD4052B,C507162,DNP,,,
+"U10, U11, U12, U13, U14, U15, U16, U17, U18, U20, U21, U22, U23, U24, U25, U26, U5, U7, U8, U9",DIP-4_W7.62mm_Socket_LongPads,20,LTV-817,C109225,DNP,,,
+U19,TSSOP-8_3x3mm_P0.65mm,1,"74LVC2G32DP,125",C548635,,,,
+U27,SOIC-8_3.9x4.9mm_P1.27mm,1,ISO1540,C179739,,,,
+U28,SOT-89-3_Handsoldering,1,TPMCP1702T-3302E/MB,C3040635,,,,
+U4,DIP-18_W7.62mm_Socket_LongPads,1,MCP23008-xP,,DNP,,https://www.mouser.co.uk/ProductDetail/Microchip-Technology/MCP23008-E-P?qs=8FMarzwez060sofcCmNWdQ%3D%3D,
+U6,SOT-23-6_Handsoldering,1,SN74LVC2G04DBVR,C10428,,,,

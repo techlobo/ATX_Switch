@@ -1,0 +1,22 @@
+---
+debug_flag: False
+num_switches: 2
+my_switch_1:
+  - i2c_address: 0x20
+  - num_ports: 4
+  - atx_ops: gpio
+  - db_test: 'no'
+  - port_select_test: 'no'
+my_switch_2:
+  - i2c_address: 0x21
+  - num_ports: 8
+  - atx_ops: gpio
+  - db_test: 'no'
+  - port_select_test: 'no'
+my_switch_3:
+  - i2c_address: 0x22
+  - num_ports: 8
+  - atx_ops: i2c
+  - db_test: 'no'
+  - port_select_test: 'no'
+...
