@@ -52,7 +52,7 @@ The case construction allows for mainly tool-less assembly, however the followin
 3. Connect one end of the 4-pin female-to-female dupont cable to the OLED pins noting which dupont wire is connected to which OLED pin. Connect the other end of the dupont cable to the OLED connector on the ATX Switch connector board (ATXCB) - the pinout should be:
 
    ![](./Images/Numbered_ATX_board_connector_top_v1.png)
-![Numbered_ATX_board_connector_top_v1](https://github.com/techlobo/ATX_Switch/assets/95144096/fe404f16-5757-4ed8-8d44-5f1b759e948e)
+![Numbered_ATX_board_connector_top_v1](https://github.com/techlobo/ATX_Switch/assets/95144096/f61a0a24-0e74-41f6-8064-fec614adf7e5)
 
 
     | OLED Screen pins | ATXCB OLED connector       |
@@ -88,7 +88,7 @@ The case construction allows for mainly tool-less assembly, however the followin
 10. Connect the Fan cable to the relevant header on the ATXCB
 
     ![](./Images/Numbered_ATX_board_connector_bottom_v1.png)
-![Numbered_ATX_board_connector_bottom_v1](https://github.com/techlobo/ATX_Switch/assets/95144096/70c31067-9681-4f94-ae78-1443e12735fc)
+![Numbered_ATX_board_connector_bottom_v1](https://github.com/techlobo/ATX_Switch/assets/95144096/d209ffb0-7e28-4077-a188-19a049598a3d)
 
     1. If it is a Noctua fan then the plug is keyed which defines direction.
 
