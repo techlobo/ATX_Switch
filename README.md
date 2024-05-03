@@ -80,8 +80,7 @@ The video below gives a brief demonstration of the above activations, initially 
 <video src="./Images/PiKVM_ATX_op1.mp4"></video>
 
 
-
-https://github.com/techlobo/ATX_Switch/assets/95144096/a0d77224-6a1a-41ca-b5d6-2512645a160e
+https://github.com/techlobo/ATX_Switch/assets/95144096/9a94704d-ef98-44f7-9990-24d5c0a44960
 
 
 
@@ -94,9 +93,7 @@ The video below again shows the target device being selected from the Source Sel
 <video src="./Images/PiKVM_ATX_op2.mp4"></video>
 
 
-
-https://github.com/techlobo/ATX_Switch/assets/95144096/1b8dfa94-9b1b-4f53-93e8-d52ecf89ceae
-
+https://github.com/techlobo/ATX_Switch/assets/95144096/6d380cd4-e1c7-4d97-97c2-12fe709a398f
 
 
 The presentation of the Source menu is down to personal preference (as defined in the override.yaml file). It is not necessary to provide the ATX selection buttons, or indeed the selected ATX LEDs, if you are happy with just using one set of selection buttons, and having one set of 'selected' LEDs. Personally I prefer to show both sets of LEDs.
