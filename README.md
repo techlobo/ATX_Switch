@@ -100,6 +100,24 @@ The presentation of the Source menu is down to personal preference (as defined i
 
 
 
+## Rough Costs
+
+My approximate material costs for the final pieces of this project (not including IC sockets) were as shown below, on a pro-rata basis:
+
+| Item              |    Rough cost - own case (£)    | Rough cost - buy case (£) |
+| ----------------- | :-----------------------------: | :-----------------------: |
+| ATX Adapter board | $\color{green}{\textsf{3.00}}$  |            N/A            |
+| ATX Switch 4      | $\color{green}{\textsf{19.00}}$ |           39.00           |
+| ATX Switch 8      | $\color{green}{\textsf{27.00}}$ |           51.00           |
+| DIY PiKVM         | $\color{green}{\textsf{92.00}}$ |          112.00           |
+
+>[!NOTE]
+>The costs are based on the use of optocouplers for the ATX Switches. If SSRs were to be used then add at least an additional £10 to the cost of a 4-port, and £20 to an 8-port device.
+
+A bit more detail is provided here.
+
+
+
 ## Credits
 
 None of the above would work without the amazing efforts of the developers of [PiKVM](https://pikvm.org/), and their support of the [Open Source community](https://github.com/pikvm). Hats off to them!
