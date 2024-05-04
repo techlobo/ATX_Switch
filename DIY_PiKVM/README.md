@@ -18,7 +18,7 @@ The *DIY PiKVM for ATX Switch* consists of:
   - FPC 15-pin cable should also be supplied 
   - (audio if required using supplied I2S cable)
 
-- [ATX Switch connector](./ATX_Switch_connector_board_for%20_Pi/README.md) (RJ45 configured with GPIO connectivity for ATX Switch)
+- [ATX Switch connector](./ATX_Switch_connector_board_for_Pi/README.md) (RJ45 configured with GPIO connectivity for ATX Switch)
 - [0.91 inch OLED screen](https://www.aliexpress.com/item/1005005281308478.html?spm=a2g0o.order_detail.order_detail_item.3.49edf19cZxPYT9) (typically white / yellow / blue)
   - 4-pin female-to-female dupont ribbon cable
 
