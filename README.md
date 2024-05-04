@@ -126,4 +126,4 @@ None of the above would work without the amazing efforts of the developers of [P
 
 ## Summary & Disclaimer
 
-This is a synopsis of my adventures in this area while setting up management on my home lab environment. It works for me, but there are no guarantees it will for you. I've documented this primarily for my own benefit, including getting some idea of how Github and Markdown works. However, if you want to try something similar then please feel free to use any (*or none*) of the above material - at your own risk...!
+This is a synopsis of my adventures in this area while setting up management on my home lab environment. It works for me, but there are no guarantees it will for you. I've documented this primarily for my own benefit, including getting some idea of how Github and Markdown works. However, if you want to try something similar then please feel free to use any (*or none*) of the above material - $\color{red}{\textsf{at your own risk...!}}$
