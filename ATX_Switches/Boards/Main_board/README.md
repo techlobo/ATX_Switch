@@ -63,7 +63,7 @@ There are three CD4052B components on the board: two of these enable switching t
 
 ## Configuration options
 
-$\color{purple}{\textsf{Selection between GPIO and I2C operation of ATX function}}$
+$\color{purple}{\textsf{Selection between GPIO and I2C operation of ATX functions}}$
 
 The board was primarily designed to enable extension of the existing PiKVM ATX functionality (using the assigned GPIO pins) to multiple managed devices. However, the capability to operate these ATX functions via I2C was also added - thus reducing the number of required connections to the PiKVM to four (4): Ground; +3.3v; I2C SCL; and I2C SDA.
 
