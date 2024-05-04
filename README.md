@@ -114,7 +114,7 @@ My approximate material costs for the final pieces of this project (not includin
 >[!NOTE]
 >The costs are based on the use of optocouplers for the ATX Switches. If SSRs were to be used then add at least an additional £10 to the cost of a 4-port, and £20 to an 8-port device.
 
-A bit more detail is provided here.
+A bit more detail is provided [here](./Rough_costs/README.md).
 
 
 
