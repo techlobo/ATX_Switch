@@ -2,9 +2,11 @@
 
 A breakdown of the costs is provided in the [Rough_Costs PDF](./rough_costs.pdf) file.
 
-**No labour costs (e.g. purchasing / soldering / construction / testing) are accounted for in them** - this work was undertaken on a hobby basis.
+>[!NOTE]
+>**No labour costs (e.g. purchasing / soldering / construction / testing) are taken into account** - this work was undertaken on a hobby basis.
 
-If you have access to your own 3D printing capability then the cost of the cases will be limited to the cost of material. I use the facilities within my local Makerspace / Man Shed, so **my costs were minimal** and I could ensure the quality produced.
+>[!TIP]
+>If you have access to your own 3D printing capability then the cost of the cases will be limited to the cost of material. I use the facilities within my local Makerspace / Man Shed, so **my costs were minimal** and I could ensure the quality produced.
 
 The cost of the cases provided is a rough figure from running the .STEP files through [Craftcloud 3D printing services](https://craftcloud3d.com/) and going with the cheapest option - I can't say what the quality of these will be!
 
@@ -14,4 +16,4 @@ All prices are done on a pro-rata basis - e.g. 1-port RJ45 connectors are used i
 
 Most purchases were done throughout 2023, so will probably have increased by now.
 
-You will also need to supply power supplies / cables (Network / USB / HDMI) / etc as required.
+You will also need to provide power supplies / cables (Network / USB / HDMI) / etc. as required.
