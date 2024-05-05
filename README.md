@@ -15,7 +15,7 @@ Supports the control of multiple ATX-enabled endpoint devices, in conjunction wi
 
 - $\color{green}{\textsf{Low cost}}$ / **<u>self-assembly</u>**
 - 4-port and 8-port units can be built
-  - [Board / case designs available](./ATX_Switches/README.md)
+  - [Board / case designs available](https://github.com/techlobo/ATX_Switch/tree/main/ATX_Switches)
 - I2C addressable (user selectable between 0x20 – 0x27)
 - Daisy chainable (theoretically up to 8 units / 64 ports)
 - Fully isolated
