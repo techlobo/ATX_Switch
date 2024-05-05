@@ -4,7 +4,7 @@
 
 The *DIY PiKVM for ATX Switch* consists of:
 
-### Hardware
+## Hardware
 
 - [3D printed case](./Case/README.md)
 - Pi4 (suitable for PiKVM)
@@ -40,7 +40,7 @@ The case construction allows for mainly tool-less assembly, however the followin
 
 
 
-#### Hardware Assembly
+### Hardware Assembly
 
 1. Install the fan in the top of the case back
 
@@ -121,7 +121,7 @@ The case construction allows for mainly tool-less assembly, however the followin
      
 
 
-### Software
+## Software
 
 - [PiKVM v3 box software](https://files.pikvm.org/images/)
   - The latest image tested with is **v3-hdmi-rpi4-box-20240417.img.xz** with the following additions / modifications.
