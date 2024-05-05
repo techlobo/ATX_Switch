@@ -53,7 +53,7 @@ However these approaches did not address one of the key capabilities of the PiKV
 
 I had just restarted an interest in hobby electronics and wanted an affordable solution for managing my home server environment,  so decided that this would be a good first project. 
 
-I originally considered the construction of discrete '*intelligent*' controllers, using ESP32 (or similar) MCU's connected to the PiKVM via a bus based approach (e.g. Modbus, CANbus, MQTT). It was interesting testing these approaches out whilst determining how to: design / build them (e.g. component selection, PCB design, enclosure design); deploy them (e.g. where / how to install them, how to power them, how to communicate with them); and how to manage them (e.g. configuration / debug / maintenance). 
+I originally considered the construction of discrete '*intelligent*' controllers, using ESP32 (or similar) MCU's connected to the PiKVM via a bus based approach (e.g. Modbus, CANbus, MQTT). It was interesting testing these approaches out whilst determining how to: **design / build them** (e.g. component selection, PCB design, enclosure design); **deploy them** (e.g. where / how to install them, how to power them, how to communicate with them); and **manage them** (e.g. configuration / debug / maintenance). 
 
 I learnt a lot during this exercise, but finally concluded that the approaches I was considering were more complicated than necessary, and that a simpler / more robust / cheaper solution could be produced just using devices based on discrete components connected directly to the PiKVM controller - hence the ATX Switches!
 
@@ -109,12 +109,14 @@ My approximate material costs for the final pieces of this project (not includin
 | ATX Adapter board | $\color{green}{\textsf{3.00}}$  |            N/A            |
 | ATX Switch 4      | $\color{green}{\textsf{19.00}}$ |           39.00           |
 | ATX Switch 8      | $\color{green}{\textsf{27.00}}$ |           51.00           |
-| DIY PiKVM         | $\color{green}{\textsf{92.00}}$ |          112.00           |
+| DIY PiKVM         | $\color{green}{\textsf{97.70}}$ |          119.70           |
 
 >[!NOTE]
 >The costs are based on the use of optocouplers for the ATX Switches. If SSRs were to be used then add at least an additional £10 to the cost of a 4-port, and £20 to an 8-port device.
 
 A bit more detail is provided [here](./Rough_costs/README.md).
+
+Some further savings can be made (e.g. cheaper fan, use of dupont cable rather than motherboard switch extender,....) but these are what I went with.
 
 
 
