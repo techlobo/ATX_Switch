@@ -80,12 +80,15 @@ def atx_change_port(switch_address, port_num):
     if switch_address in sw_addresses:
         set_gpio_register(switch_address, 0x03 + port_num)
         logger.info(f"Port '{port_num}' on Switch 0x{hex(switch_address)[2:]} selected")
+	
+	# Update the atx_operational.yaml file
+	# performed here so that only change if register update successful, otherwise values remain as was
+        data["current_sw_address"] = switch_address
+        data["current_port_num"] = port_num
+
     else:
        logger.warning(f"Switch address '{switch_address}' not found in sw_addresses.")
 
-    # Update the atx_operational.yaml file
-    data["current_sw_address"] = switch_address
-    data["current_port_num"] = port_num
 
     def hexint_presenter(dumper, data):
         return dumper.represent_int(hex(data))
