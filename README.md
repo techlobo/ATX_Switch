@@ -116,7 +116,7 @@ My approximate material costs for the final pieces of this project (not includin
 
 A bit more detail is provided [here](./Rough_costs/README.md).
 
-Some further savings can be made (e.g. cheaper fan, use of dupont cable rather than motherboard switch extender,....) but these are what I went with.
+Some further savings can be made (e.g. cheaper fan, no fan at all, use of dupont cable rather than motherboard switch extender,....) but these are what I went with.
 
 
 
