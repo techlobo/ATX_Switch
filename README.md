@@ -15,7 +15,7 @@ Supports the control of multiple ATX-enabled endpoint devices, in conjunction wi
 
 - $\color{green}{\textsf{Low cost}}$ / **<u>self-assembly</u>**
 - 4-port and 8-port units can be built
-  - [Board / case designs available](./ATX_Switch/ATX_Switches/README.md)
+  - [Board / case designs available](/ATX_Switch/ATX_Switches/README.md)
 - I2C addressable (user selectable between 0x20 – 0x27)
 - Daisy chainable (theoretically up to 8 units / 64 ports)
 - Fully isolated
@@ -24,10 +24,10 @@ Supports the control of multiple ATX-enabled endpoint devices, in conjunction wi
 - ATX operations use standard PiKVM WebUI interface
 - Potential for ATX operations to be performed via I2C rather than GPIO (**not implemented yet**)
 - Compatible with existing PiKVM based ATX adapter boards that are installed inside managed PC / workstation / server
-  - Design available to build own [affordable ATX adapter board](./ATX_Switch/ATX_Adapter_board/README.md)
+  - Design available to build own [affordable ATX adapter board](/ATX_Switch/ATX_Adapter_board/README.md)
 - :stop_sign: ${\textsf{\color{darkorange}Requires DIY PiKVM due to custom ATX port}}$ :stop_sign:
   - Not compatible with existing v3 / v4 PiKVM hardware designs of ATX port
-  - [Low-cost DIY design](./ATX_Switch/DIY_PiKVM/README.md) available based on v3 Box build (**self-assembly**)
+  - [Low-cost DIY design](/ATX_Switch/DIY_PiKVM/README.md) available based on v3 Box build (**self-assembly**)
   - 👀 Limited to 1080P @50Hz 👀
 
 <p align="center">
