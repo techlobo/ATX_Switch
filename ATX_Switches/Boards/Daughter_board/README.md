@@ -18,7 +18,7 @@ Again sockets were used for test purposes and can be omitted from board creation
 
 ### Daughter board presence check
 
-The only additional functionality that this board provides is support of a daughter board presence test. This consists of the ability to use the 2nd channel on the third CD4052B to check for a high ('1') signal DB_test line when the second RJ45 port of the daughter board is selected. Basically each of the RJ45 ports on the daughter board are selected sequentially and the value returned via from DB_test (via I2C) is read. All ports should read low ('0') apart from the second port, so the sequence read should be - 0,1,0,0.
+The only additional functionality that this board provides is support of a daughter board presence test. This consists of the ability to use the 2nd channel on the third CD4052B to check for a high ('1') signal DB_test line when the second RJ45 port of the daughter board is selected. Basically each of the RJ45 ports on the daughter board are selected sequentially and the value returned from DB_test (via I2C) is read. All ports should read low ('0') apart from the second port, so the sequence read should be - 0,1,0,0.
 
 In theory you don't have to check all of the ports - could just verify that port2 on daughterboard returns ‘1’, but checking that one of the others returns ‘0’ may be a useful sense check. Ensure that the selected port value is also returned for verification. 
 
