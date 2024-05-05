@@ -24,10 +24,10 @@ Supports the control of multiple ATX-enabled endpoint devices, in conjunction wi
 - ATX operations use standard PiKVM WebUI interface
 - Potential for ATX operations to be performed via I2C rather than GPIO (**not implemented yet**)
 - Compatible with existing PiKVM based ATX adapter boards that are installed inside managed PC / workstation / server
-  - Design available to build own [affordable ATX adapter board](./ATX_Adapter_board/README.md)
+  - Design available to build own [affordable ATX adapter board](https://github.com/techlobo/ATX_Switch/tree/main/ATX_Adapter_board)
 - :stop_sign: ${\textsf{\color{darkorange}Requires DIY PiKVM due to custom ATX port}}$ :stop_sign:
   - Not compatible with existing v3 / v4 PiKVM hardware designs of ATX port
-  - [Low-cost DIY design](./DIY_PiKVM/README.md) available based on v3 Box build (**self-assembly**)
+  - [Low-cost DIY design](https://github.com/techlobo/ATX_Switch/tree/main/DIY_PiKVM) available based on v3 Box build (**self-assembly**)
   - 👀 Limited to 1080P @50Hz 👀
 
 <p align="center">
