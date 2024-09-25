@@ -31,6 +31,7 @@ import yaml
 import smbus2
 import logging
 import systemd.journal
+from numbers import Number
 
 # Set up logging
 logger = logging.getLogger('ATX_Logger')
@@ -99,6 +100,13 @@ if debug_flag not in VALID_DEBUG_FLAG_TEST:
 
 setup_logging(debug_flag)
 
+# Validate i2c_bus_id
+# can't be certain of range, but must be a number!
+i2c_bus_id = config.get('i2c_bus_id')
+if not (isinstance(i2c_bus_id, Number)):
+    logger.error(f"No numeric i2c_bus_id provided")
+    sys.exit(1)
+
 # Validate num_switches
 num_switches = config.get('num_switches')
 if not (1 <= num_switches <= 8):
@@ -111,8 +119,8 @@ if not all(entry in config for entry in switch_entries):
     logger.error(f"Number of 'my_switch_X' entries does not match 'num_switches': {num_switches}")
     sys.exit(1)
 
-# Initialize the I2C bus (bus number 1)
-i2c_bus = smbus2.SMBus(1)
+# Initialize the I2C bus
+i2c_bus = smbus2.SMBus(i2c_bus_id)
 devices_found = 0
 
 # Check each switch entry
@@ -236,6 +244,7 @@ if devices_found == 0:
 
 # create the operational YAML file
 operational_data = {
+    "i2c_bus_id": i2c_bus_id,
     "sw_addresses": sw_addresses,
     "current_sw_address": 0,
     "current_port_num": 0,

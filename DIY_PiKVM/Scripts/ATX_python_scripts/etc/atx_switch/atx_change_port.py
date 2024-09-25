@@ -41,9 +41,9 @@ print(logger.handlers)
 def setup_logging(debug_flag):
     logger.setLevel(logging.DEBUG if debug_flag else logging.INFO)
 
-def set_gpio_register(address, value):
+def set_gpio_register(i2c_bus_id, address, value):
     global address_present
-    bus = smbus2.SMBus(1)
+    bus = smbus2.SMBus(i2c_bus_id)
     address_present = 'yes'
     try:
         bus.write_byte_data(address, 0x09, value)
@@ -63,22 +63,23 @@ def atx_change_port(switch_address, port_num):
         data = yaml.safe_load(yaml_file)
 
     debug_flag = data.get("debug_flag")
+    i2c_bus_id = data.get("i2c_bus_id")
     sw_addresses = data.get("sw_addresses", {})
 
     setup_logging(debug_flag)
 
-# Loop through the devices at sw_addresses on I2C bus 1
+# Loop through the devices at sw_addresses on I2C bus
 #    for device, address in sw_addresses.items():
     for i in range(0, len(sw_addresses)):
         address = sw_addresses[i]
-        set_gpio_register(address, 0x00)
+        set_gpio_register(i2c_bus_id, address, 0x00)
         if (address_present == 'no'):
             sw_addresses.remove(address)
             logger.warning(f"Switch address {hex(address)} removed from atx_operational.yaml file")
 
     # Set the MCP23008 GPIO register for the specified device
     if switch_address in sw_addresses:
-        set_gpio_register(switch_address, 0x03 + port_num)
+        set_gpio_register(i2c_bus_id, switch_address, 0x03 + port_num)
         logger.info(f"Port '{port_num}' on Switch 0x{hex(switch_address)[2:]} selected")
 	
 	# Update the atx_operational.yaml file
