@@ -1,6 +1,6 @@
 ---
 debug_flag: False
-i2c_bus_id: 23
+i2c_bus_id: 1
 num_switches: 2
 my_switch_1:
   - i2c_address: 0x20
