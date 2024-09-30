@@ -69,7 +69,6 @@ The output should be similar to:
     </p>
 In the above we can see that the CP2112 controller is on bus 23
 
-
 Verify that the CP2112 I2C controller is working and can see the attached ATX Switch(es) by using the command :  **i2cdetect -r -y 23**  (substitute the bus ID determined above for the last value, if necessary)
 
 >[!NOTE]
