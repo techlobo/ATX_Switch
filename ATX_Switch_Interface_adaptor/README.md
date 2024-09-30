@@ -42,8 +42,8 @@ A simple board was then constructed incorporating the CP2112 board and a pair of
 
 ## Required Parts
 
-- 3D printed case
-- ATX Switch Interface board
+- [3D printed case](./Case/README.md)
+- [ATX Switch Interface board](./Board/README.md)
 - CP2112 debug board
 - 4x M2.5x10 countersunk bolts[^3] 
 - USB-A to micro-USB cable
