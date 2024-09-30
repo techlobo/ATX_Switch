@@ -19,13 +19,13 @@ The *DIY PiKVM for ATX Switch* consists of:
   - (audio if required using supplied I2S cable)
 
 - [ATX Switch connector](./ATX_Switch_connector_board_for_Pi/README.md) (RJ45 configured with GPIO connectivity for ATX Switch)
-- [0.91 inch OLED screen](https://www.aliexpress.com/item/1005005281308478.html?spm=a2g0o.order_detail.order_detail_item.3.49edf19cZxPYT9) (typically white / yellow / blue)
+- [0.91 inch OLED screen](https://www.aliexpress.com/item/1005005281308478.html) (typically white / yellow / blue)
   - 4-pin female-to-female dupont ribbon cable
 
 - 4x 2mm silicone cushion mat self adhesive rubber feet
 - **Optional** - 40x40x10 fan (preferably PWM). Few types tested:
   - [Noctua NF-A4x10 5V PWM](https://noctua.at/en/nf-a4x10-pwm)
-  - [Pi5 PWM fan](https://thepihut.com/products/4010-cooler-black-fan-for-raspberry-pi-5?variant=42684803907779&currency=GBP&utm_medium=product_sync&utm_source=google&utm_content=sag_organic&utm_campaign=sag_organic&srsltid=AfmBOorqCuIKFX5Ji7Str4vBa_Px1iHJMSYVzqaVvpGrUzGQpmNn1nzhiWo)
+  - [Pi5 PWM fan](https://thepihut.com/products/4010-cooler-black-fan-for-raspberry-pi-5?variant=42684803907779)
   - [GeeekPi PWM fan](https://www.amazon.co.uk/GeeekPi-Raspberry-Adjustable-40x40x10mm-Radiator/dp/B092ZF995F?th=1)
   - There are others, but not tested.
 
@@ -33,9 +33,9 @@ The *DIY PiKVM for ATX Switch* consists of:
 The case construction allows for mainly tool-less assembly, however the following bolts / connectors **are** used in the build of the unit:
 
 - 2x M3 35mm bolts for connecting the front and back of the case together.
-  - I used [black hex socket head bolts](https://www.aliexpress.com/item/1005005832717344.html?spm=a2g0o.order_list.order_list_main.139.71011802gTyL6x) (to match in with the black PLA) together with [M3(OD4.5) 6mm heat inserts](https://www.aliexpress.com/item/1005006042691803.html?spm=a2g0o.order_list.order_list_main.22.71011802gTyL6x) in the case back to provide a good fit that can be opened / closed easily. The use of heat inserts is not compulsory but the inner diameter of the mounting hole on the back case will probably need to be adjusted if M3 screws (or bolts) are to be used on their own.
+  - I used [black hex socket head bolts](https://www.aliexpress.com/item/1005005832717344.html) (to match in with the black PLA) together with [M3(OD4.5) 6mm heat inserts](https://www.aliexpress.com/item/1005006042691803.html) in the case back to provide a good fit that can be opened / closed easily. The use of heat inserts is not compulsory but the inner diameter of the mounting hole on the back case will probably need to be adjusted if M3 screws (or bolts) are to be used on their own.
 - 4x M3 15mm bolts / nuts to fasten the fan into place
-  - I used [black D4(M3) screw book binding post screws](https://www.aliexpress.com/item/32789781458.html?spm=a2g0o.order_list.order_list_main.27.71011802gTyL6x) together with rubber washers to provide a good looking finish with the Noctua NF-A4x10 5V PWM fan.
+  - I used [black D4(M3) screw book binding post screws](https://www.aliexpress.com/item/32789781458.html) together with rubber washers to provide a good looking finish with the Noctua NF-A4x10 5V PWM fan.
 - **Optional** - depending on preference, an M2.5 brass standoff spacer (18mm) can be used in conjunction with 2x M2.5 6mm low flat screws to fasten the ATX Switch connector board to the Raspberry Pi4. This is not essential as the case construction will hold the components together, but may provide rigidity during assembly.
 
 

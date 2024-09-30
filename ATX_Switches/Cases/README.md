@@ -14,7 +14,7 @@ Consists of:
 - Common base
 - ATX Switch 4 top
   - Configured with cut-outs for the connectors on the main board and ventilation holes (not that the unit generates much heat)
-  - Uses  [M3(OD4.5) 6mm heat inserts](https://www.aliexpress.com/item/1005006042691803.html?spm=a2g0o.order_list.order_list_main.22.71011802gTyL6x) within the support pillars to allow for repeated opening / closing. 
+  - Uses  [M3(OD4.5) 6mm heat inserts](https://www.aliexpress.com/item/1005006042691803.html?) within the support pillars to allow for repeated opening / closing. 
 
 Case parts are fastened together with 4x 14mm countersunk black M3 bolts.
 
@@ -36,7 +36,7 @@ Consists of:
   - Configured with cut-outs for the connectors on the main board and ventilation holes (not that the unit generates much heat)
 - ATX Switch 8 top
   - Provides ventilation holes
-  - Uses  [M3(OD4.5) 6mm heat inserts](https://www.aliexpress.com/item/1005006042691803.html?spm=a2g0o.order_list.order_list_main.22.71011802gTyL6x) within the support pillars to allow for repeated opening / closing.
+  - Uses  [M3(OD4.5) 6mm heat inserts](https://www.aliexpress.com/item/1005006042691803.html?) within the support pillars to allow for repeated opening / closing.
 
 Case parts are fastened together with 4x 35mm countersunk black M3 bolts.
 
