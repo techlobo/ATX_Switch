@@ -86,7 +86,11 @@ Here we can see that there are 2x ATX Switches configured at addresses 0x20 and 
 
 Update the value in the 'i2c_bus_id' field in the ATX Switch environment configuration file (**atx_switch_initialisation.yaml**) to reflect the bus ID determined[^4]
 
-Configure the rest of the ATX Switch environment within the PiKVM (using the approach defined in the DIY PiKVM [Scripts](../DIY_PiKVM/Scripts/README.md) area)
+Configure the rest of the ATX Switch environment within the PiKVM (using the approach defined in the DIY PiKVM [Scripts](../DIY_PiKVM/Scripts/README.md) area).
+
+>[!NOTE]
+>
+>Ensure that the PiKVM kernel has been updated to include CP2112 support by running **pikvm-update**
 
 ###### Footnotes
 
