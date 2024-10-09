@@ -27,8 +27,9 @@ This board was tested in the ATX Switch environment and supported the required f
 A simple board was then constructed incorporating the CP2112 board and a pair of RJ45 connectors, to provide the interface between the PiKVM and ATX Switch.
 
  <p align="center">
-    <img src="./Images/ATX_SW_Interface.png" alt="ATX Switch Interface board" width="400"/>
+    <img src="./Images/atx_switch_interface_board_1.jpg" alt="ATX Switch Interface board" width="400"/>
     </p>
+
 
 >[!NOTE]
 >
