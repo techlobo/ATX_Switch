@@ -50,7 +50,7 @@ Supports the control of multiple ATX-enabled endpoint devices, in conjunction wi
       <img src="./Images/DIY_PiKVM_for_ATX_Switch_v1.png" alt="DIY PiKVM for ATX Switch operation" width="400"/>
       </p>
   
-  - $\color{green}{\textsf{New addition}}$ - [ATX Switch Interface adaptor](./ATX_Switch_Interface_adaptor/README.md) (**self assembly**) enables connection between v3 / v4+ devices and ATX Switch environment.
+  - $\color{green}{\textsf{New addition}}$ - [ATX Switch Interface adaptor](./ATX_Switch_Interface_adaptor/README.md) (**self assembly**) enables connection between v2 / v3 / v4+ devices and ATX Switch environment.
   
     <p align="center">
     <img src="./Images/atx_switch_interface_1.png" alt="ATX Switch Interface adaptor" width="400"/>
