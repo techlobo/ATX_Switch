@@ -50,13 +50,18 @@ Supports the control of multiple ATX-enabled endpoint devices, in conjunction wi
       <img src="./Images/DIY_PiKVM_for_ATX_Switch_v1.png" alt="DIY PiKVM for ATX Switch operation" width="400"/>
       </p>
   
+
   - $\color{green}{\textsf{New addition}}$ - [ATX Switch Interface adaptor](./ATX_Switch_Interface_adaptor/README.md) (**self assembly**) enables connection between v2 / v3 / v4+ devices and ATX Switch environment.
   
     <p align="center">
     <img src="./Images/atx_switch_interface_1.png" alt="ATX Switch Interface adaptor" width="400"/>
     </p>
   
+  - $\color{green}{\textsf{Further addition}}$ - [Low cost DIY v2 Design](./DIY_PiKVM_v2/README.md) (**self assembly**) - modified version of DIY design above to provide standard ATX functionality as per v3 / v4 PiKVM units
   
+    <p align="center">
+    <img src="./Images/DIY_PiKVM_v2_attr1_subject_attr1.png" alt="DIY PiKVM for standard ATX operation" width="400"/>
+    </p>
 
 ## Typical deployments
 
@@ -131,16 +136,19 @@ The presentation of the Source menu is down to personal preference (as defined i
 
 My approximate material costs for the final pieces of this project (not including IC sockets) were as shown below, on a pro-rata basis:
 
-| Item                 |    Rough cost - own case (£)    | Rough cost - buy case (£) |
-| -------------------- | :-----------------------------: | :-----------------------: |
-| ATX Adapter board    | $\color{green}{\textsf{3.00}}$  |            N/A            |
-| ATX Switch 4         | $\color{green}{\textsf{19.00}}$ |           39.00           |
-| ATX Switch 8         | $\color{green}{\textsf{27.00}}$ |           51.00           |
-| DIY PiKVM            | $\color{green}{\textsf{97.70}}$ |          119.70           |
-| ATX Switch Interface | $\color{green}{\textsf{7.50}}$  |           26.00           |
+| Item                    |    Rough cost - own case (£)    | Rough cost - buy case (£) |
+| ----------------------- | :-----------------------------: | :-----------------------: |
+| ATX Adapter board       | $\color{green}{\textsf{3.00}}$  |            N/A            |
+| ATX Switch 4            | $\color{green}{\textsf{19.00}}$ |           39.00           |
+| ATX Switch 8            | $\color{green}{\textsf{27.00}}$ |           51.00           |
+| DIY PiKVM (ATX-SW)      | $\color{green}{\textsf{97.70}}$ |          119.70           |
+| ATX Switch Interface    | $\color{green}{\textsf{7.50}}$  |           26.00           |
+| DIY PiKVM v2 (ATX only) | $\color{green}{\textsf{98.20}}$ |          118.20           |
 
 >[!NOTE]
 >The costs are based on the use of optocouplers for the ATX Switches. If SSRs were to be used then add at least an additional £10 to the cost of a 4-port, and £20 to an 8-port device.
+>
+>In the case of the DIY PiKVM v2 this has been costed using the KAQY214 SSR's to more closely match standard PiKVM spec.
 
 A bit more detail is provided [here](./Rough_costs/README.md).
 
