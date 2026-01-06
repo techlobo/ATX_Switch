@@ -27,7 +27,7 @@ import sys
 
 def check_port(switch_addr, port_num):
     # Read switch address and port number from atx_operational.yaml
-    with open("/var/tmp/atx_switch/atx_operational.yaml", "r") as yaml_file:
+    with open("/run/atx_switch/atx_operational.yaml", "r") as yaml_file:
         data = yaml.safe_load(yaml_file)
 
 #    debug_flag = data.get("debug_flag")

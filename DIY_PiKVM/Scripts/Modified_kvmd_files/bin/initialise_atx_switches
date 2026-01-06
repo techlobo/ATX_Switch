@@ -255,7 +255,7 @@ def hexint_presenter(dumper, operational_data):
     return dumper.represent_int(hex(operational_data))
 yaml.add_representer(int, hexint_presenter)
 
-directory_path = '/var/tmp/atx_switch'
+directory_path = '/run/atx_switch'
 filename = os.path.join(directory_path, 'atx_operational.yaml')
 os.makedirs(directory_path, exist_ok=True)
 with open(filename, "w") as yaml_file:

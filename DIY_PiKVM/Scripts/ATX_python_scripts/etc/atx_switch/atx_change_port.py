@@ -59,7 +59,7 @@ def set_gpio_register(i2c_bus_id, address, value):
 
 def atx_change_port(switch_address, port_num):
     # Read sw_addresses from atx_operational.yaml
-    with open("/var/tmp/atx_switch/atx_operational.yaml", "r") as yaml_file:
+    with open("/run/atx_switch/atx_operational.yaml", "r") as yaml_file:
         data = yaml.safe_load(yaml_file)
 
     debug_flag = data.get("debug_flag")
@@ -95,6 +95,6 @@ def atx_change_port(switch_address, port_num):
         return dumper.represent_int(hex(data))
     yaml.add_representer(int, hexint_presenter)
 
-    with open("/var/tmp/atx_switch/atx_operational.yaml", "w") as yaml_file:
+    with open("/run/atx_switch/atx_operational.yaml", "w") as yaml_file:
         yaml.dump(data, yaml_file, default_flow_style=False)
 # Note - If use safe_dump then data is presented in decimal not hex format!!
