@@ -2,11 +2,11 @@
 
 Dip Variant
 
-![](.\Images\DIP_variant_representation_attr2_subject.png)
+![](./Images/DIP_variant_representation_attr2_subject.png)
 
 SMD Variant
 
-![](.\Images\SMD_variant_representation_attr1_subject.png)
+![](./Images/SMD_variant_representation_attr1_subject.png)
 
 Basically the same board with different choice of components / construction approach. In the case of the DIP variation you can use sockets (which I have a preference for) and decide which components to use (opto-couplers / SSR's) during installation. Although you can also dispense with the sockets and solder DIP components directly to PCB.
 
