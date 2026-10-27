@@ -1,6 +1,6 @@
 # Main board
 
-<img src="./Images/Main_board_TH_socket_v1_3_70.png" style="zoom:100%;" />
+<img src="./Images/Main_board_TH_socket_v1_3.png" style="zoom:100%;" />
 
 ## Physical aspects
 
