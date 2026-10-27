@@ -23,9 +23,9 @@ As mentioned previously I originally had considered creating a solution based on
 
 The majority of HDMI KVM's that were being used within the community were 4-port or 8-port, as these were large enough for the bulk of home environments. Therefore I opted to create a 4-port main board that could be expanded to 8-ports by the addition of a daughter board - thus saving cost on some of the common components: Pi4 isolation (I2C and GPIO); I2C expander; power supply; Address selection switch; and various connectors. 
 
-| Main Board                                | Daughter board                                |
-| ----------------------------------------- | --------------------------------------------- |
-| ![](./Images/Main_board_TH_socket_v1.png) | ![](./Images/Daughter_board_TH_socket_v1.png) |
+| Main Board                                                   | Daughter board                                |
+| ------------------------------------------------------------ | --------------------------------------------- |
+| <img src="./Images/Main_board_TH_socket_v1_3.png" style="zoom:62%;" /> | ![](./Images/Daughter_board_TH_socket_v1.png) |
 
 However, being aware of larger HDMI KVM switches (and the ability to daisy-chain some HDMI KVM switches), I decided to design the ATX Switch to also allow expansion of the I2C and GPIO channels from the Pi4. 
 
