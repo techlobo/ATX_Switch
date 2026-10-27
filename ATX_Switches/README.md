@@ -25,7 +25,7 @@ The majority of HDMI KVM's that were being used within the community were 4-port
 
 | Main Board                                                   | Daughter board                                |
 | ------------------------------------------------------------ | --------------------------------------------- |
-| <img src="./Images/Main_board_TH_socket_v1_3.png" style="zoom:62%;" /> | ![](./Images/Daughter_board_TH_socket_v1.png) |
+| <img src="./Images/Main_board_TH_socket_v1_3.png" style="zoom:50%;" /> | ![](./Images/Daughter_board_TH_socket_v1.png) |
 
 However, being aware of larger HDMI KVM switches (and the ability to daisy-chain some HDMI KVM switches), I decided to design the ATX Switch to also allow expansion of the I2C and GPIO channels from the Pi4. 
 
