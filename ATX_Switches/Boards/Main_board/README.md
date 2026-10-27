@@ -1,6 +1,6 @@
 # Main board
 
-<img src="./Images/Main_board_TH_socket_v1_3.png" style="zoom:60%;" />
+<img src="./Images/Main_board_TH_socket_v1_3_70.png" style="zoom:100%;" />
 
 ## Physical aspects
 
@@ -14,7 +14,7 @@ The size of the PCB was determined from a number of factors:
 
 I could have made it smaller (particularly after the design had been tested), but I was happy with the result so it stayed as it was[^2].
 
-The original boards were 2-layer and worked fine, however when I produced the final iteration the price of 4-layer boards wasn't that much more (in the quantities I was after) - so I decided to produce a 4-layer for the experience, and because it looks neater.
+~~The original boards were 2-layer and worked fine, however when I produced the final iteration the price of 4-layer boards wasn't that much more (in the quantities I was after) - so I decided to produce a 4-layer for the experience, and because it looks neater.~~
 
 $\color{green}{\textsf{Update:}}$ I wanted to tune the pull-up resistors for the I2C communications and decided to update the main board. However 4-layer boards were now more expensive so I reverted back to a 2-layer design for v1.3
 
